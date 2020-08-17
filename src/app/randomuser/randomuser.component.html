@@ -1,0 +1,33 @@
+<header>
+    <h1>Random User Generator</h1>
+    
+    <h4 class="m-t-4">
+        Powered by Angular
+    </h4>
+    <p>
+        A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
+    </p>
+</header>
+
+<div class="frame card-offset">
+    <div class="card">
+        <div class="details">
+            <div class="user_photo horizontal_center" id="user_photo">
+                <img [src]="randomuser.picture.large"/>
+            </div>
+            <p style="margin-top:30px;" class="m-t-4 user_title">{{ display.text }}</p>
+            <p class="user_value">{{ display.value }}</p>
+
+            <div class="text-center m-t-5">
+              <i *ngFor="let tab of tabs" class="{{ tab.class }} {{ tab.icon }}" (click)="tabClicked(tab.id)"></i>
+            </div>
+
+            <div class="m-t-10">
+                <button (click)="getRandomUser()" class="btn-primary btn-lg">
+                    Generate Next User
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
